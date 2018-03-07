@@ -5,22 +5,18 @@ namespace TestCShap
     class Program
     {
 
-        static int SumValues(params int[] vals)
+        static void ShowDouble(ref int val)
         {
-            int sum = 0;
-            foreach (var val in vals)
-            {
-                sum += val;
-            }
-
-            return sum;
+            val *= 2;
+            Console.WriteLine("Val doubled = {0}",val);
         }
         
         static void Main(string[] args)
         {
-            int sum = SumValues(1, 5, 2, 9, 8);
-            Console.WriteLine("Summed Values = {0}", sum);
-            Console.ReadKey();
+            int number = 5;
+            Console.WriteLine("myNumber = {0}",number);
+            ShowDouble(ref number);
+            Console.WriteLine("myNumber = {0}",number);
         }
     }
 }
