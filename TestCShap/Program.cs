@@ -2,30 +2,27 @@
 
 namespace TestCShap
 {
-    class Program
+    internal class MyBase
     {
-        delegate double ProcessDelegate(double param1, double param2);
-
-        static double Mutiply(double param1, double param2)
+        //Class members.
+    }
+    
+    class Program:MyBase
+    {
+        public class MyClass
         {
-            return param1 * param2;
-        }
-
-        static double Divide(double param1, double param2)
-        {
-            return param1 / param2;
+            // Class members.
         }
 
         static void Main(string[] args)
         {
-            ProcessDelegate process;
-            
-            process = Mutiply;
-            Console.WriteLine("乘:{0}",process(12,4));
-
-            process = Divide;
-            Console.WriteLine("除:{0}",process(12,4));
-
+            MyClass myClass = new MyClass();
+            Console.WriteLine("reach");
         }
+    }
+
+    interface IInterface
+    {
+        
     }
 }
