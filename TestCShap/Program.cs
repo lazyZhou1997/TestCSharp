@@ -23,10 +23,15 @@ namespace TestCShap
 
         static void Main(string[] args)
         {
-            int[] myArray = {1, 8, 3, 6, 2, 5, 9, 3, 0, 2};
-            int maxIndex;
-            Console.WriteLine("The maximumvalue inyArray is {0}", MaxValue(myArray, out maxIndex));
-            Console.WriteLine("{0}", maxIndex + 1);
+            int i;
+            string text;
+            for (i = 0; i < 10; i++)
+            {
+                text = "Line" + Convert.ToString(i);
+                Console.WriteLine("{0}",text);
+            }
+            
+            Console.WriteLine("Last text output in loop: {0}",text);
         }
     }
 }
