@@ -4,34 +4,28 @@ namespace TestCShap
 {
     class Program
     {
-        static int MaxValue(int[] intArray, out int maxIndex)
+        delegate double ProcessDelegate(double param1, double param2);
+
+        static double Mutiply(double param1, double param2)
         {
-            int maxVal = intArray[0];
-            maxIndex = 0;
+            return param1 * param2;
+        }
 
-            for (int i = 0; i < intArray.Length; i++)
-            {
-                if (intArray[i] > maxVal)
-                {
-                    maxVal = intArray[i];
-                    maxIndex = i;
-                }
-            }
-
-            return maxVal;
+        static double Divide(double param1, double param2)
+        {
+            return param1 / param2;
         }
 
         static void Main(string[] args)
         {
-            int i;
-            string text;
-            for (i = 0; i < 10; i++)
-            {
-                text = "Line" + Convert.ToString(i);
-                Console.WriteLine("{0}",text);
-            }
+            ProcessDelegate process;
             
-            Console.WriteLine("Last text output in loop: {0}",text);
+            process = Mutiply;
+            Console.WriteLine("乘:{0}",process(12,4));
+
+            process = Divide;
+            Console.WriteLine("除:{0}",process(12,4));
+
         }
     }
 }
