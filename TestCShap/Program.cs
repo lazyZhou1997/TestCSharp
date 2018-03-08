@@ -2,35 +2,32 @@
 
 namespace TestCShap
 {
-
-    class Parent
+    public interface IMyInterface
     {
-        public virtual void DoSomething()
-        {
-            Console.WriteLine("Parent");
-        }
+        void DoSomething();
+        void DoSomethingElse();
     }
 
-    class Child:Parent
+    public class MyClass : IMyInterface
     {
-        public override void DoSomething()
+        //显示的实现接口
+        void IMyInterface.DoSomething()
         {
-            Console.WriteLine("Child");
-            ((Parent) this).DoSomething();
+            
+        }
+
+        public void DoSomethingElse()
+        {
+            
         }
     }
 
     class Program
     {
-    
-    
         static void Main(string[] args)
         {
-            Child child = new Child();
-            //child.DoSomething();
-            Parent parent = child;
-            parent.DoSomething();
+            MyClass myClass = new MyClass();
+            myClass.DoSomething();
         }
-
     }
 }
