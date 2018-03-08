@@ -3,11 +3,21 @@
 namespace TestCShap
 {
 
-    public class TestStatic
+    class Parent
     {
-        public static int Test = 1;
+        public virtual void DoSomething()
+        {
+            Console.WriteLine("Parent");
+        }
+    }
 
-        public static int Test1 => Test;
+    class Child:Parent
+    {
+        public override void DoSomething()
+        {
+            Console.WriteLine("Child");
+            ((Parent) this).DoSomething();
+        }
     }
 
     class Program
@@ -16,9 +26,10 @@ namespace TestCShap
     
         static void Main(string[] args)
         {
-            Console.WriteLine(TestStatic.Test);
-            TestStatic testStatic = new TestStatic();
-            
+            Child child = new Child();
+            //child.DoSomething();
+            Parent parent = child;
+            parent.DoSomething();
         }
 
     }
