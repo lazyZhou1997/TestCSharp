@@ -2,27 +2,24 @@
 
 namespace TestCShap
 {
-    internal class MyBase
-    {
-        //Class members.
-    }
-    
-    class Program:MyBase
-    {
-        public class MyClass
-        {
-            // Class members.
-        }
 
+    public class TestStatic
+    {
+        public static int Test = 1;
+
+        public static int Test1 => Test;
+    }
+
+    class Program
+    {
+    
+    
         static void Main(string[] args)
         {
-            MyClass myClass = new MyClass();
-            Console.WriteLine("reach");
+            Console.WriteLine(TestStatic.Test);
+            TestStatic testStatic = new TestStatic();
+            
         }
-    }
 
-    interface IInterface
-    {
-        
     }
 }
