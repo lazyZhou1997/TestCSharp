@@ -6,13 +6,14 @@ namespace TestCSharp
     {
         static void Main(string[] args)
         {
-        
-            using (Animal animal = new Cow("哈哈"))
+            Console.WriteLine("Using custom collection calss Animals:");
+            Animals animalCollection = new Animals();
+            animalCollection.Add(new Cow("Sarash"));
+            foreach (Animal myAnimal in animalCollection)
             {
-                Console.WriteLine("1");
+                Console.WriteLine("New {0} object added to custom collection," +
+                                  "Name = {1}",myAnimal.ToString(),myAnimal.Name);
             }
-
-            Console.WriteLine("2");
         }
     }
 }

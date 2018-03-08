@@ -2,7 +2,7 @@
 
 namespace TestCSharp
 {
-    public abstract class Animal:IDisposable
+    public abstract class Animal
     {
         protected string name;
 
@@ -15,11 +15,6 @@ namespace TestCSharp
         public Animal()
         {
             name = "The animal with no name";
-        }
-
-        public void Dispose()
-        {
-            Console.WriteLine("消除");
         }
 
         public Animal(string newName)
