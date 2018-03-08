@@ -2,26 +2,36 @@
 
 namespace TestCShap
 {
+    public class Parent
+    {
+        public virtual void DoSomething()
+        {
+            Console.WriteLine("Parent");
+        }
+    }
+
+    public class Child : Parent
+    {
+        public sealed override void DoSomething()
+        {
+            Console.WriteLine("Child");
+        }
+    }
+
+    public class GrandChild : Child
+    {
+        public new void DoSomething()
+        {
+            Console.WriteLine("GrandChild");
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Deck myDeck = new Deck();
-            myDeck.Shuffle();
-            Card temCard;
-            for (int i = 0; i < 52; i++)
-            {
-                temCard = myDeck.GetCard(i);
-                Console.Write(temCard.ToString());
-                if (i != 51)
-                {
-                    Console.Write(",");
-                }
-                else
-                {
-                    Console.WriteLine();
-                }
-            }
+            Parent parent = new GrandChild();
+            parent.DoSomething();
         }
     }
 }
