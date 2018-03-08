@@ -1,37 +1,18 @@
 ﻿using System;
 
-namespace TestCShap
+namespace TestCSharp
 {
-    public class Parent
-    {
-        public virtual void DoSomething()
-        {
-            Console.WriteLine("Parent");
-        }
-    }
-
-    public class Child : Parent
-    {
-        public sealed override void DoSomething()
-        {
-            Console.WriteLine("Child");
-        }
-    }
-
-    public class GrandChild : Child
-    {
-        public new void DoSomething()
-        {
-            Console.WriteLine("GrandChild");
-        }
-    }
-
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Parent parent = new GrandChild();
-            parent.DoSomething();
+        
+            using (Animal animal = new Cow("哈哈"))
+            {
+                Console.WriteLine("1");
+            }
+
+            Console.WriteLine("2");
         }
     }
 }
